@@ -1,2 +1,5 @@
-package com.mikalai.touristvouchers.enums;public class VoucherType {
+package com.mikalai.touristvouchers.enums;
+
+public enum VoucherType {
+  WEEKEND, EXCURSION, RECREATION, PILGRIMAGE;
 }

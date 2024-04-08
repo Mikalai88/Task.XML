@@ -6,7 +6,7 @@
 //
 
 
-package com.mikalai.touristvouchers;
+package com.mikalai.touristvouchers_jaxb;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

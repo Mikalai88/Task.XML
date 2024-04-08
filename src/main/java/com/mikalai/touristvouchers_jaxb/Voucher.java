@@ -6,7 +6,7 @@
 //
 
 
-package com.mikalai.touristvouchers;
+package com.mikalai.touristvouchers_jaxb;
 
 import java.math.BigDecimal;
 import javax.xml.bind.annotation.XmlAccessType;

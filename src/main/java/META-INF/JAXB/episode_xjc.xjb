@@ -13,31 +13,31 @@ Generated on: 2024.04.06 at 04:24:38 PM CEST
       <package name="com.example.touristvouchers"/>
     </schemaBindings>
     <bindings scd="tns:TouristVouchers">
-      <class ref="com.example.touristvouchers.TouristVouchers"/>
+      <class ref="com.mikalai.touristvouchers_jaxb.TouristVouchers"/>
     </bindings>
     <bindings scd="~tns:standardVoucher">
-      <class ref="com.example.touristvouchers.StandardVoucher"/>
+      <class ref="com.mikalai.touristvouchers_jaxb.StandardVoucher"/>
     </bindings>
     <bindings scd="~tns:extendedVoucher">
-      <class ref="com.example.touristvouchers.ExtendedVoucher"/>
+      <class ref="com.mikalai.touristvouchers_jaxb.ExtendedVoucher"/>
     </bindings>
     <bindings scd="~tns:voucher">
-      <class ref="com.example.touristvouchers.Voucher"/>
+      <class ref="com.mikalai.touristvouchers_jaxb.Voucher"/>
     </bindings>
     <bindings scd="~tns:HotelCharacteristic">
-      <class ref="com.example.touristvouchers.HotelCharacteristic"/>
+      <class ref="com.mikalai.touristvouchers_jaxb.HotelCharacteristic"/>
     </bindings>
     <bindings scd="~tns:ExtendedHotelCharacteristic">
-      <class ref="com.example.touristvouchers.ExtendedHotelCharacteristic"/>
+      <class ref="com.mikalai.touristvouchers_jaxb.ExtendedHotelCharacteristic"/>
     </bindings>
     <bindings scd="~tns:Type">
-      <typesafeEnumClass ref="com.example.touristvouchers.Type"/>
+      <typesafeEnumClass ref="com.mikalai.touristvouchers_jaxb.Type"/>
     </bindings>
     <bindings scd="~tns:Transport">
-      <typesafeEnumClass ref="com.example.touristvouchers.Transport"/>
+      <typesafeEnumClass ref="com.mikalai.touristvouchers_jaxb.Transport"/>
     </bindings>
     <bindings scd="~tns:Meal">
-      <typesafeEnumClass ref="com.example.touristvouchers.Meal"/>
+      <typesafeEnumClass ref="com.mikalai.touristvouchers_jaxb.Meal"/>
     </bindings>
   </bindings>
 </bindings>

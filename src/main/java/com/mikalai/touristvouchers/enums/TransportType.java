@@ -1,2 +1,6 @@
-package com.mikalai.touristvouchers.enums;public class TransportType {
+package com.mikalai.touristvouchers.enums;
+
+public enum TransportType {
+  AIR, RAIL, AUTO, LINER
 }
+

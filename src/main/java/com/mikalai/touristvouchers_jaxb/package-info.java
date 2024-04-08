@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://example.com/TouristVouchers", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.mikalai.touristvouchers;
+package com.mikalai.touristvouchers_jaxb;

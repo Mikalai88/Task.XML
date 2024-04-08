@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TouristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://example.com/TouristVouchers"
+                 xsi:schemaLocation="http://example.com/TouristVouchers TouristVouchers.xsd">
+
+    <standardVoucher id="V001">
+        <type>weekend</type>
+        <country>France</country>
+        <daysNights>2/3</daysNights>
+        <issueDate>2024-04-01T00:00:00</issueDate>
+        <transport>air</transport>
+        <cost>1200.00</cost>
+    </standardVoucher>
+
+    <extendedVoucher id="V002">
+        <type>recreation</type>
+        <country>Italy</country>
+        <daysNights>5/4</daysNights>
+        <issueDate>2024-04-15T00:00:00</issueDate>
+        <transport>liner</transport>
+        <cost>2500.00</cost>
+        <hotel>
+            <stars>5</stars>
+            <mealIncluded>true</mealIncluded>
+            <mealType>Al</mealType>
+            <roomType>deluxe</roomType>
+            <tvIncluded>true</tvIncluded>
+            <acIncluded>true</acIncluded>
+            <wifiIncluded>true</wifiIncluded>
+        </hotel>
+    </extendedVoucher>
+</TouristVouchers>
