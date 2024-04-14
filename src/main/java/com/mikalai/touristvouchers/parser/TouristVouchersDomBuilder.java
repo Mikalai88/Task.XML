@@ -56,6 +56,8 @@ public class TouristVouchersDomBuilder {
     }
   }
 
+  // Перечисления вместо boolean
+
   private void buildVouchers(NodeList vouchersList, boolean isExtended) {
     for (int i = 0; i < vouchersList.getLength(); i++) {
       Element voucherElement = (Element) vouchersList.item(i);
@@ -115,6 +117,8 @@ public class TouristVouchersDomBuilder {
     BigDecimal cost = new BigDecimal(costStr);
     voucher.setCost(cost);
   }
+
+  // все в константу (строки)
 
 
   private static String getElementTextContent(Element element, String elementName) {

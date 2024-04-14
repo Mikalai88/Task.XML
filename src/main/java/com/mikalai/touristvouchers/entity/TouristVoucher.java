@@ -6,7 +6,7 @@ import com.mikalai.touristvouchers.enums.VoucherType;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public abstract class TouristVoucher {
+public abstract class TouristVoucher { // Слово абстракт добавить в название класса
   private String id;
   private VoucherType type;
   private String country;
@@ -72,5 +72,7 @@ public abstract class TouristVoucher {
   public void setCost(BigDecimal cost) {
     this.cost = cost;
   }
+
+
 }
 
