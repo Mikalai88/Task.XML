@@ -29,11 +29,16 @@
             <element name="cost" type="decimal"/>
         </sequence>
         <attribute name="id" type="ID" use="required"/>
+        <attribute name="status" type="string"/>
+        <attribute name="bookingNumber" type="string"/>
     </complexType>
 
     <complexType name="standardVoucher">
         <complexContent>
             <extension base="tns:voucher">
+                <sequence>
+                    <element name="tourDescription" type="string" minOccurs="0"/>
+                </sequence>
             </extension>
         </complexContent>
     </complexType>

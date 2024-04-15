@@ -2,16 +2,17 @@
 <TouristVouchers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://example.com/TouristVouchers"
                  xsi:schemaLocation="http://example.com/TouristVouchers TouristVouchers.xsd">
 
-    <standardVoucher id="V001">
+    <standardVoucher id="V001" status="confirmed" bookingNumber="BN123">
         <type>weekend</type>
         <country>France</country>
         <daysNights>2/3</daysNights>
         <issueDate>2024-04-01T00:00:00</issueDate>
         <transport>air</transport>
         <cost>1200.00</cost>
+        <tourDescription>This package includes a guided tour of Paris and a river cruise.</tourDescription>
     </standardVoucher>
 
-    <extendedVoucher id="V002">
+    <extendedVoucher id="V002" status="pending" bookingNumber="BN456">
         <type>recreation</type>
         <country>Italy</country>
         <daysNights>5/4</daysNights>
@@ -26,6 +27,118 @@
             <tvIncluded>true</tvIncluded>
             <acIncluded>true</acIncluded>
             <wifiIncluded>true</wifiIncluded>
+        </hotel>
+    </extendedVoucher>
+
+    <standardVoucher id="V003" status="confirmed" bookingNumber="BN789">
+        <type>excursion</type>
+        <country>Germany</country>
+        <daysNights>1/2</daysNights>
+        <issueDate>2024-05-01T00:00:00</issueDate>
+        <transport>rail</transport>
+        <cost>850.00</cost>
+        <tourDescription>This package includes a guided tour of Berlin and a beer cruise.</tourDescription>
+    </standardVoucher>
+
+    <extendedVoucher id="V004" status="pending" bookingNumber="BN790">
+        <type>pilgrimage</type>
+        <country>Israel</country>
+        <daysNights>7/6</daysNights>
+        <issueDate>2024-06-15T00:00:00</issueDate>
+        <transport>air</transport>
+        <cost>3000.00</cost>
+        <hotel>
+            <stars>4</stars>
+            <mealIncluded>false</mealIncluded>
+            <mealType>HB</mealType>
+            <roomType>standard</roomType>
+            <tvIncluded>false</tvIncluded>
+            <acIncluded>true</acIncluded>
+            <wifiIncluded>false</wifiIncluded>
+        </hotel>
+    </extendedVoucher>
+
+    <standardVoucher id="V005" status="cancelled" bookingNumber="BN800">
+        <type>weekend</type>
+        <country>Spain</country>
+        <daysNights>3/2</daysNights>
+        <issueDate>2024-07-20T00:00:00</issueDate>
+        <transport>auto</transport>
+        <cost>650.00</cost>
+        <tourDescription>This package includes a guided tour of Barcelona and a beach excursion.</tourDescription>
+    </standardVoucher>
+
+    <extendedVoucher id="V006" status="confirmed" bookingNumber="BN801">
+        <type>recreation</type>
+        <country>Greece</country>
+        <daysNights>10/9</daysNights>
+        <issueDate>2024-08-01T00:00:00</issueDate>
+        <transport>liner</transport>
+        <cost>4500.00</cost>
+        <hotel>
+            <stars>5</stars>
+            <mealIncluded>true</mealIncluded>
+            <mealType>Al</mealType>
+            <roomType>suite</roomType>
+            <tvIncluded>true</tvIncluded>
+            <acIncluded>true</acIncluded>
+            <wifiIncluded>true</wifiIncluded>
+        </hotel>
+    </extendedVoucher>
+
+    <standardVoucher id="V007" status="pending" bookingNumber="BN802">
+        <type>excursion</type>
+        <country>Netherlands</country>
+        <daysNights>4/3</daysNights>
+        <issueDate>2024-09-10T00:00:00</issueDate>
+        <transport>liner</transport>
+        <cost>1100.00</cost>
+        <tourDescription>This package includes a guided tour of Amsterdam and a river cruise.</tourDescription>
+    </standardVoucher>
+
+    <extendedVoucher id="V008" status="confirmed" bookingNumber="BN803">
+        <type>pilgrimage</type>
+        <country>India</country>
+        <daysNights>14/13</daysNights>
+        <issueDate>2024-10-05T00:00:00</issueDate>
+        <transport>air</transport>
+        <cost>3200.00</cost>
+        <hotel>
+            <stars>3</stars>
+            <mealIncluded>true</mealIncluded>
+            <mealType>BB</mealType>
+            <roomType>standard</roomType>
+            <tvIncluded>true</tvIncluded>
+            <acIncluded>false</acIncluded>
+            <wifiIncluded>true</wifiIncluded>
+        </hotel>
+    </extendedVoucher>
+
+    <standardVoucher id="V009" status="cancelled" bookingNumber="BN804">
+        <type>recreation</type>
+        <country>Portugal</country>
+        <daysNights>5/4</daysNights>
+        <issueDate>2024-11-15T00:00:00</issueDate>
+        <transport>rail</transport>
+        <cost>950.00</cost>
+        <tourDescription>This package includes a guided tour of Lissabon and a train cruise.</tourDescription>
+    </standardVoucher>
+
+    <extendedVoucher id="V010" status="pending" bookingNumber="BN805">
+        <type>weekend</type>
+        <country>Japan</country>
+        <daysNights>3/2</daysNights>
+        <issueDate>2024-12-20T00:00:00</issueDate>
+        <transport>air</transport>
+        <cost>1800.00</cost>
+        <hotel>
+            <stars>5</stars>
+            <mealIncluded>false</mealIncluded>
+            <mealType>Al</mealType>
+            <roomType>deluxe</roomType>
+            <tvIncluded>true</tvIncluded>
+            <acIncluded>true</acIncluded>
+            <wifiIncluded>false</wifiIncluded>
         </hotel>
     </extendedVoucher>
 </TouristVouchers>

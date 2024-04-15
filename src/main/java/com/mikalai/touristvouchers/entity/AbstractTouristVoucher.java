@@ -6,14 +6,16 @@ import com.mikalai.touristvouchers.enums.VoucherType;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public abstract class TouristVoucher { // Слово абстракт добавить в название класса
+public abstract class AbstractTouristVoucher {
   private String id;
   private VoucherType type;
   private String country;
-  private String daysNights; // Format "x/y"
+  private String daysNights;
   private LocalDateTime issueDate;
   private TransportType transport;
   private BigDecimal cost;
+  private String status;
+  private String bookingNumber;
 
   // Getters
   public String getId() {
@@ -42,6 +44,13 @@ public abstract class TouristVoucher { // Слово абстракт добав
 
   public BigDecimal getCost() {
     return cost;
+  }
+  public String getStatus() {
+    return status;
+  }
+
+  public String getBookingNumber() {
+    return bookingNumber;
   }
 
   // Setters
@@ -73,6 +82,13 @@ public abstract class TouristVoucher { // Слово абстракт добав
     this.cost = cost;
   }
 
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public void setBookingNumber(String bookingNumber) {
+    this.bookingNumber = bookingNumber;
+  }
 
 }
 

@@ -1,6 +1,6 @@
 package com.mikalai.touristvouchers.entity;
 
-public class ExtendedVoucher extends TouristVoucher {
+public class ExtendedVoucher extends AbstractTouristVoucher {
   private ExtendedHotelCharacteristic hotel;
 
   public ExtendedVoucher() {

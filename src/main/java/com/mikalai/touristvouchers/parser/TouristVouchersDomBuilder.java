@@ -2,7 +2,7 @@ package com.mikalai.touristvouchers.parser;
 
 import com.mikalai.touristvouchers.entity.ExtendedHotelCharacteristic;
 import com.mikalai.touristvouchers.entity.StandardVoucher;
-import com.mikalai.touristvouchers.entity.TouristVoucher;
+import com.mikalai.touristvouchers.entity.AbstractTouristVoucher;
 import com.mikalai.touristvouchers.entity.ExtendedVoucher;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -13,9 +13,9 @@ import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
 import com.mikalai.touristvouchers.enums.MealType;
 import com.mikalai.touristvouchers.enums.TransportType;
+import com.mikalai.touristvouchers.enums.VoucherCategory;
 import com.mikalai.touristvouchers.enums.VoucherType;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -24,7 +24,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class TouristVouchersDomBuilder {
-  private Set<TouristVoucher> vouchers;
+  private Set<AbstractTouristVoucher> vouchers;
 
   private DocumentBuilder docBuilder;
 
@@ -38,7 +38,7 @@ public class TouristVouchersDomBuilder {
     }
   }
 
-  public Set<TouristVoucher> getVouchers() {
+  public Set<AbstractTouristVoucher> getVouchers() {
     return vouchers;
   }
 
@@ -49,26 +49,30 @@ public class TouristVouchersDomBuilder {
       Element root = doc.getDocumentElement();
       NodeList standardVouchersList = root.getElementsByTagName("standardVoucher");
       NodeList extendedVouchersList = root.getElementsByTagName("extendedVoucher");
-      buildVouchers(standardVouchersList, false);
-      buildVouchers(extendedVouchersList, true);
+      buildVouchers(standardVouchersList, VoucherCategory.STANDARD);
+      buildVouchers(extendedVouchersList, VoucherCategory.EXTENDED);
     } catch (IOException | SAXException e) {
-      e.printStackTrace(); // log
+      e.printStackTrace();
     }
   }
 
-  // Перечисления вместо boolean
 
-  private void buildVouchers(NodeList vouchersList, boolean isExtended) {
+  private void buildVouchers(NodeList vouchersList, VoucherCategory category) {
     for (int i = 0; i < vouchersList.getLength(); i++) {
       Element voucherElement = (Element) vouchersList.item(i);
-      TouristVoucher voucher = isExtended ? buildExtendedVoucher(voucherElement) : buildStandardVoucher(voucherElement);
+      AbstractTouristVoucher voucher = (category == VoucherCategory.EXTENDED) ? buildExtendedVoucher(voucherElement) : buildStandardVoucher(voucherElement);
       vouchers.add(voucher);
     }
   }
 
-  private TouristVoucher buildStandardVoucher(Element voucherElement) {
-    TouristVoucher voucher = new StandardVoucher();
+
+  private AbstractTouristVoucher buildStandardVoucher(Element voucherElement) {
+    StandardVoucher voucher = new StandardVoucher();
     fillCommonVoucherFields(voucher, voucherElement);
+
+    String tourDescription = getElementTextContent(voucherElement, "tourDescription");
+    voucher.setTourDescription(tourDescription);
+
     return voucher;
   }
 
@@ -92,9 +96,10 @@ public class TouristVouchersDomBuilder {
     return voucher;
   }
 
-
-  private void fillCommonVoucherFields(TouristVoucher voucher, Element voucherElement) {
+  private void fillCommonVoucherFields(AbstractTouristVoucher voucher, Element voucherElement) {
     voucher.setId(voucherElement.getAttribute("id"));
+    voucher.setStatus(voucherElement.getAttribute("status"));
+    voucher.setBookingNumber(voucherElement.getAttribute("bookingNumber"));
 
     String typeStr = getElementTextContent(voucherElement, "type").toUpperCase();
     VoucherType type = VoucherType.valueOf(typeStr);

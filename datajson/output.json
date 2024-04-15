@@ -1,0 +1,155 @@
+{
+  "schemaLocation" : "http://example.com/TouristVouchers TouristVouchers.xsd",
+  "standardVoucher" : [ {
+    "id" : "V001",
+    "status" : "confirmed",
+    "bookingNumber" : "BN123",
+    "type" : "weekend",
+    "country" : "France",
+    "daysNights" : "2/3",
+    "issueDate" : "2024-04-01T00:00:00",
+    "transport" : "air",
+    "cost" : "1200.00",
+    "tourDescription" : "This package includes a guided tour of Paris and a river cruise."
+  }, {
+    "id" : "V003",
+    "status" : "confirmed",
+    "bookingNumber" : "BN789",
+    "type" : "excursion",
+    "country" : "Germany",
+    "daysNights" : "1/2",
+    "issueDate" : "2024-05-01T00:00:00",
+    "transport" : "rail",
+    "cost" : "850.00",
+    "tourDescription" : "This package includes a guided tour of Berlin and a beer cruise."
+  }, {
+    "id" : "V005",
+    "status" : "cancelled",
+    "bookingNumber" : "BN800",
+    "type" : "weekend",
+    "country" : "Spain",
+    "daysNights" : "3/2",
+    "issueDate" : "2024-07-20T00:00:00",
+    "transport" : "auto",
+    "cost" : "650.00",
+    "tourDescription" : "This package includes a guided tour of Barcelona and a beach excursion."
+  }, {
+    "id" : "V007",
+    "status" : "pending",
+    "bookingNumber" : "BN802",
+    "type" : "excursion",
+    "country" : "Netherlands",
+    "daysNights" : "4/3",
+    "issueDate" : "2024-09-10T00:00:00",
+    "transport" : "liner",
+    "cost" : "1100.00",
+    "tourDescription" : "This package includes a guided tour of Amsterdam and a river cruise."
+  }, {
+    "id" : "V009",
+    "status" : "cancelled",
+    "bookingNumber" : "BN804",
+    "type" : "recreation",
+    "country" : "Portugal",
+    "daysNights" : "5/4",
+    "issueDate" : "2024-11-15T00:00:00",
+    "transport" : "rail",
+    "cost" : "950.00",
+    "tourDescription" : "This package includes a guided tour of Lissabon and a train cruise."
+  } ],
+  "extendedVoucher" : [ {
+    "id" : "V002",
+    "status" : "pending",
+    "bookingNumber" : "BN456",
+    "type" : "recreation",
+    "country" : "Italy",
+    "daysNights" : "5/4",
+    "issueDate" : "2024-04-15T00:00:00",
+    "transport" : "liner",
+    "cost" : "2500.00",
+    "hotel" : {
+      "stars" : "5",
+      "mealIncluded" : "true",
+      "mealType" : "Al",
+      "roomType" : "deluxe",
+      "tvIncluded" : "true",
+      "acIncluded" : "true",
+      "wifiIncluded" : "true"
+    }
+  }, {
+    "id" : "V004",
+    "status" : "pending",
+    "bookingNumber" : "BN790",
+    "type" : "pilgrimage",
+    "country" : "Israel",
+    "daysNights" : "7/6",
+    "issueDate" : "2024-06-15T00:00:00",
+    "transport" : "air",
+    "cost" : "3000.00",
+    "hotel" : {
+      "stars" : "4",
+      "mealIncluded" : "false",
+      "mealType" : "HB",
+      "roomType" : "standard",
+      "tvIncluded" : "false",
+      "acIncluded" : "true",
+      "wifiIncluded" : "false"
+    }
+  }, {
+    "id" : "V006",
+    "status" : "confirmed",
+    "bookingNumber" : "BN801",
+    "type" : "recreation",
+    "country" : "Greece",
+    "daysNights" : "10/9",
+    "issueDate" : "2024-08-01T00:00:00",
+    "transport" : "liner",
+    "cost" : "4500.00",
+    "hotel" : {
+      "stars" : "5",
+      "mealIncluded" : "true",
+      "mealType" : "Al",
+      "roomType" : "suite",
+      "tvIncluded" : "true",
+      "acIncluded" : "true",
+      "wifiIncluded" : "true"
+    }
+  }, {
+    "id" : "V008",
+    "status" : "confirmed",
+    "bookingNumber" : "BN803",
+    "type" : "pilgrimage",
+    "country" : "India",
+    "daysNights" : "14/13",
+    "issueDate" : "2024-10-05T00:00:00",
+    "transport" : "air",
+    "cost" : "3200.00",
+    "hotel" : {
+      "stars" : "3",
+      "mealIncluded" : "true",
+      "mealType" : "BB",
+      "roomType" : "standard",
+      "tvIncluded" : "true",
+      "acIncluded" : "false",
+      "wifiIncluded" : "true"
+    }
+  }, {
+    "id" : "V010",
+    "status" : "pending",
+    "bookingNumber" : "BN805",
+    "type" : "weekend",
+    "country" : "Japan",
+    "daysNights" : "3/2",
+    "issueDate" : "2024-12-20T00:00:00",
+    "transport" : "air",
+    "cost" : "1800.00",
+    "hotel" : {
+      "stars" : "5",
+      "mealIncluded" : "false",
+      "mealType" : "Al",
+      "roomType" : "deluxe",
+      "tvIncluded" : "true",
+      "acIncluded" : "true",
+      "wifiIncluded" : "false"
+    }
+  } ]
+}
