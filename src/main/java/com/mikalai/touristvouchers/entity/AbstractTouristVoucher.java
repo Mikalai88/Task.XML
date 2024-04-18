@@ -1,7 +1,7 @@
 package com.mikalai.touristvouchers.entity;
 
-import com.mikalai.touristvouchers.enums.TransportType;
-import com.mikalai.touristvouchers.enums.VoucherType;
+import com.mikalai.touristvouchers.type.TransportType;
+import com.mikalai.touristvouchers.type.VoucherType;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

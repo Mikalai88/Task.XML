@@ -1,6 +1,6 @@
 package com.mikalai.touristvouchers.entity;
 
-import com.mikalai.touristvouchers.enums.MealType;
+import com.mikalai.touristvouchers.type.MealType;
 
 public class HotelCharacteristic {
   private int stars;
