@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,8 +23,11 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TouristVouchersDomBuilder {
+  private static final Logger logger = LogManager.getLogger(TouristVouchersDomBuilder.class);
   private Set<AbstractTouristVoucher> vouchers;
 
   private DocumentBuilder docBuilder;
@@ -34,7 +38,7 @@ public class TouristVouchersDomBuilder {
     try {
       docBuilder = factory.newDocumentBuilder();
     } catch (ParserConfigurationException e) {
-      e.printStackTrace(); // log
+      logger.error("Error in configuring the document builder", e);
     }
   }
 
@@ -52,7 +56,7 @@ public class TouristVouchersDomBuilder {
       buildVouchers(standardVouchersList, VoucherCategory.STANDARD);
       buildVouchers(extendedVouchersList, VoucherCategory.EXTENDED);
     } catch (IOException | SAXException e) {
-      e.printStackTrace();
+      logger.error("Error parsing the XML file", e);
     }
   }
 
@@ -125,11 +129,31 @@ public class TouristVouchersDomBuilder {
 
   // все в константу (строки)
 
-
   private static String getElementTextContent(Element element, String elementName) {
     NodeList nList = element.getElementsByTagName(elementName);
     Node node = nList.item(0);
     return node != null ? node.getTextContent() : "";
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    TouristVouchersDomBuilder that = (TouristVouchersDomBuilder) o;
+    return Objects.equals(vouchers, that.vouchers) && Objects.equals(docBuilder, that.docBuilder);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(vouchers, docBuilder);
+  }
+
+  @Override
+  public String toString() {
+    return "TouristVouchersDomBuilder{" +
+            "vouchers=" + vouchers +
+            ", docBuilder=" + docBuilder +
+            '}';
   }
 }
 
