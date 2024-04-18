@@ -25,21 +25,34 @@ public class TouristVoucherStAXParser {
           StartElement startElement = event.asStartElement();
           String qName = startElement.getName().getLocalPart();
 
-          if (qName.equalsIgnoreCase("standardVoucher") || qName.equalsIgnoreCase("extendedVoucher")) {
-            System.out.println("Start Voucher: " + qName);
-            String id = startElement.getAttributeByName(new QName("id")).getValue();
-            System.out.println("ID: " + id);
-          } else if (qName.equalsIgnoreCase("country")) {
-            event = eventReader.nextEvent();
-            if (event.isCharacters()) {
-              Characters characters = event.asCharacters();
-              System.out.println("Country: " + characters.getData());
+          try {
+            VoucherXmlTag tag = VoucherXmlTag.fromString(qName);
+
+            switch (tag) {
+              case STANDARD_VOUCHER:
+              case EXTENDED_VOUCHER:
+                System.out.println("Start Voucher: " + qName);
+                String id = startElement.getAttributeByName(new QName("id")).getValue();
+                System.out.println("ID: " + id);
+                break;
+              case COUNTRY:
+                event = eventReader.nextEvent();
+                if (event.isCharacters()) {
+                  Characters characters = event.asCharacters();
+                  System.out.println("Country: " + characters.getData());
+                }
+                break;
+              default:
+                break;
             }
+          } catch (IllegalArgumentException e) {
+            logger.error("Unknown element tag: " + qName, e);
           }
         }
+
         if (event.isEndElement()) {
           String qName = event.asEndElement().getName().getLocalPart();
-          if (qName.equalsIgnoreCase("standardVoucher") || qName.equalsIgnoreCase("extendedVoucher")) {
+          if (qName.equalsIgnoreCase(VoucherXmlTag.STANDARD_VOUCHER.getValue()) || qName.equalsIgnoreCase(VoucherXmlTag.EXTENDED_VOUCHER.getValue())) {
             System.out.println("End Voucher: " + qName);
           }
         }
